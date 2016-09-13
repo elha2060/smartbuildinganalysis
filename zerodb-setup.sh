@@ -54,7 +54,7 @@ sudo -u ilab wget http://downloads.sourceforge.net/tcl/tcl8.6.6-src.tar.gz
 sudo -u ilab tar -xvf tcl8.6.6-src.tar.gz
 cd tcl8.6.6 
 
-sudo -u ilab export SRCDIR=`pwd` &&
+export SRCDIR=`pwd` &&
 
 cd unix &&
 
