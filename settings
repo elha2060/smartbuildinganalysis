@@ -1,0 +1,9 @@
+bandwidth=100
+latency=50
+dbsize=10000
+elementsize=120
+query=select
+querysize=150
+distribution=uniform
+element=measurement
+ip=192.168.38.4
