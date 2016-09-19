@@ -37,7 +37,7 @@ zerodb_PID=$!
 
 
 #populate server instance
-python3 populate-server.py ${config[ip]} ${config[dbsize]} ${config[elementsize]} ${config[distribution]}
+python3 populate-server.py ${config[ip]} ${config[dbsize]} ${config[elementsize]} ${config[distribution]} ${config[element]}
 #setup network settings
 sudo ./network-setup.sh $interface ${config[latency]} ${config[bandwidth]}
 #start traffic capture on PC4

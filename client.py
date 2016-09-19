@@ -1,6 +1,6 @@
 import zerodb
 from zerodb.query import *
-from models import Measurement
+from models import Measurement, State
 import argparse
 
 
@@ -27,6 +27,9 @@ certificate = "/home/ilab/zerodb/server.pem"
 #connect to server
 db = zerodb.DB((ip, 8001), username=username, password=passphrase, server_cert=certificate)
 
-johns = list(db[Measurement].all())
-print(len(johns))
-print(johns)
+if (element == "Measurement"):
+    data = list(db[Measurement].query(Gt("roomID",9291), limit=querysize))
+elif (element == "State"):
+    data = list(db[State].query(Gt("roomID",9291), limit=querysize))   
+print(len(data))
+print(data)

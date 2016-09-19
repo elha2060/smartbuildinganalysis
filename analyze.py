@@ -37,7 +37,7 @@ for i in range(len(list)):
         
 data=subprocess.check_output(['./stats.sh', 'temp.pcapng']).decode("utf-8")
 stats=data.split()
-print("client max response time = {0:.8f}, min = {1:.8f}, average = {2:.8f}, variance = {2:.8f}".format(max(clientTime),min(clientTime),statistics.mean(clientTime),statistics.pvariance(clientTime)))
-print("server max response time = {0:.8f}, min = {1:.8f}, average = {2:.8f}, variance = {2:.8f}".format(max(serverTime),min(serverTime),statistics.mean(serverTime),statistics.pvariance(serverTime)))
+print("client max response time = {0:.8f}, min = {1:.8f}, average = {2:.8f}, variance = {3:.8f}, median = {4:.8f}".format(max(clientTime),min(clientTime),statistics.mean(clientTime),statistics.pvariance(clientTime),statistics.median(clientTime)))
+print("server max response time = {0:.8f}, min = {1:.8f}, average = {2:.8f}, variance = {3:.8f}, median = {4:.8f}".format(max(serverTime),min(serverTime),statistics.mean(serverTime),statistics.pvariance(serverTime),statistics.median(serverTime)))
 print("{0} client messages({1}B) and {2} server messages({3}B), organized into {4} request/reply roundtrips in {5} seconds (total= {6} messages({7}B)".format(stats[2],stats[3],stats[0],stats[1],counter,stats[4],stats[6],stats[5]))
 os.remove('temp.pcapng')
